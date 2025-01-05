@@ -1,0 +1,259 @@
+## cs2_weapon_base_gun
+
+此类型表示 `CCSWeaponBaseGun` 类。
+
+> 此类型继承自 [`base_entity`](/api/entities/base-entity "此类型表示一个基础游戏实体。") 类型。其所有基础方法和字段在此类型中也可用。
+
+## get_abs_origin
+
+[[字段]]
+
+返回绝对原点（用于渲染的原点）。
+
+**参数**
+
+无。
+
+**返回值**
+
+| 类型 | 描述 |
+| ---- | ---- |
+| [`vector`](/api/common-types/vector "此类型是一个常见的3D向量 (x, y, z)。") | 原点。 |
+
+**示例**
+
+```lua
+local org = wep:get_abs_origin();
+```
+
+## get_max_speed
+
+[[字段]]
+
+返回持有此武器时的最大玩家速度。
+
+**参数**
+
+无。
+
+**返回值**
+
+| 类型 | 描述 |
+| ---- | ---- |
+| `float` | 最大速度，以UPS为单位。 |
+
+**示例**
+
+```lua
+local spd = wep:get_max_speed();
+```
+
+## get_inaccuracy
+
+[[字段]]
+
+返回当前的不准确值。
+
+**参数**
+
+| 名称 | 类型 | 描述 |
+| ---- | ---- | ---- |
+| `mode` | [`csweapon_mode`](/api/entities/csweapon-mode "此枚举表示武器的射击模式。") | 武器模式。 |
+
+**返回值**
+
+| 类型 | 描述 |
+| ---- | ---- |
+| `float` | 不准确值。 |
+
+**示例**
+
+```lua
+local inacc = wep:get_inaccuracy(csweapon_mode.primary_mode);
+```
+
+## get_spread
+
+[[字段]]
+
+返回当前的扩散值。
+
+**参数**
+
+| 名称 | 类型 | 描述 |
+| ---- | ---- | ---- |
+| `mode` | [`csweapon_mode`](/api/entities/csweapon-mode "此枚举表示武器的射击模式。") | 武器模式。 |
+
+**返回值**
+
+| 类型 | 描述 |
+| ---- | ---- |
+| `float` | 扩散值。 |
+
+**示例**
+
+```lua
+local spread = wep:get_spread(csweapon_mode.primary_mode);
+```
+
+## get_id
+
+[[字段]]
+
+返回武器ID。
+
+**参数**
+
+无。
+
+**返回值**
+
+| 类型 | 描述 |
+| ---- | ---- |
+| [`weapon_id`](/api/entities/weapon-id "此枚举表示游戏中各种武器的唯一标识符。") | 武器ID。 |
+
+**示例**
+
+```lua
+local wep_id = wep:get_id();
+```
+
+## get_type
+
+[[字段]]
+
+返回武器类型。
+
+**参数**
+
+无。
+
+**返回值**
+
+| 类型 | 描述 |
+| ---- | ---- |
+| [`csweapon_type`](/api/entities/csweapon-type "此枚举表示游戏中的武器类型。") | 武器类型。 |
+
+**示例**
+
+```lua
+local type = wep:get_type();
+```
+
+## get_data
+
+[[字段]]
+
+返回武器静态数据。
+
+**参数**
+
+无。
+
+**返回值**
+
+| 类型 | 描述 |
+| ---- | ---- |
+| [`ccsweapon_base_vdata`](/api/entities/ccsweapon-base-vdata "此类型表示武器的静态数据。") | 武器数据。 |
+
+**示例**
+
+```lua
+local data = wep:get_data();
+```
+
+## is_gun
+
+[[字段]]
+
+如果此武器是**枪械**，则返回 `true`。
+
+**参数**
+
+无。
+
+**返回值**
+
+| 类型 | 描述 |
+| ---- | ---- |
+| `bool` | 如果是枪械则为 `true`。 |
+
+**示例**
+
+```lua
+if wep:is_gun() then
+    -- ...
+end
+```
+
+## is_attackable
+
+[[字段]]
+
+如果可以用此武器攻击，则返回 `true`。
+
+**参数**
+
+无。
+
+**返回值**
+
+| 类型 | 描述 |
+| ---- | ---- |
+| `bool` | 如果可以攻击则为 `true`。 |
+
+**示例**
+
+```lua
+if wep:is_attackable() then
+    -- ...
+end
+```
+
+## has_secondary_attack
+
+[[字段]]
+
+如果此武器有次要攻击模式，则返回 `true`。
+
+**参数**
+
+无。
+
+**返回值**
+
+| 类型 | 描述 |
+| ---- | ---- |
+| `bool` | 如果有次要攻击模式则为 `true`。 |
+
+**示例**
+
+```lua
+if wep:has_secondary_attack() then
+    -- ...
+end
+```
+
+## has_spread
+
+[[字段]]
+
+如果此武器有扩散（例如，刀没有任何扩散），则返回 `true`。
+
+**参数**
+
+无。
+
+**返回值**
+
+| 类型 | 描述 |
+| ---- | ---- |
+| `bool` | 如果有扩散则为 `true`。 |
+
+**示例**
+
+```lua
+if wep:has_spread() then
+    -- ...
+end
+```
